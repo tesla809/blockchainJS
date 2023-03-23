@@ -1,0 +1,23 @@
+{
+  "name": "blockchain-js",
+  "version": "1.0.0",
+  "description": "creating a blockchain network and blockchain explorer in JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha dev/blockchain.test.js"
+  },
+  "keywords": [
+    "blockchain",
+    "ethereum",
+    "bitcoin",
+    "web3",
+    "javascript"
+  ],
+  "author": "Anthony Albertorio",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "ethereum-cryptography": "^1.2.0",
+    "mocha": "^10.2.0"
+  }
+}
