@@ -31,7 +31,7 @@ class Block {
     let uint8Array = new TextEncoder("utf-8").encode(_string);
 	  return uint8Array;
   }
-
+  
  /**
   * Transform an Uint8Array into a string
   * @param {Uint8Array} _uint8Array - transactions to be included in block
@@ -46,9 +46,12 @@ class Block {
  // CLASS METHODS
  /**
   * Generate the block's hash from the block's metadata
+  * @param {string} _nonce - incremented value used to find target value during proof of work.
   * @return {string} The hexadecimal hash value representing the block
   */
-  generateHash() {
+  generateHash(_nonce) {
+    this.nonce = _nonce;
+
      // convert string -> Uint8Array for sha256()
     const blockHeader = Block.stringToArray(
                 this.timeStamp.toString() 
@@ -59,6 +62,7 @@ class Block {
     // toHex() transforms uint8Array-based hash
     // to hexadecimal number
     const hash = toHex(sha256(blockHeader)); 
+
     return hash;
   }
 }
